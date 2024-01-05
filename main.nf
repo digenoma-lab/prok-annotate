@@ -47,7 +47,8 @@ workflow {
                 checkIfExists: true)
         }
 
-        kofamscan(prokka.out.faa, kofamscan_db)
+        //kofamscan(prokka.out.faa, kofamscan_db)
+        kofamscan(genomes_ch, kofamscan_db)
         merge_kofamscan(kofamscan.out.hits.collect())
     }
 
